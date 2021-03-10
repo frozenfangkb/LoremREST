@@ -1,3 +1,4 @@
+using LoremREST.Helpers;
 using LoremREST.Models;
 using LoremREST.Services;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,7 @@ namespace LoremREST
                 sp.GetRequiredService<IOptions<QueryDatabaseSettings>>().Value);
 
             services.AddSingleton<QueryService>();
+            services.AddSingleton<Utilities>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
